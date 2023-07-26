@@ -1,90 +1,76 @@
-import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import React, { Component } from "react";
+import {Text,View,StyleSheet,TextInput,Button, TouchableOpacity, ScrollView,FlatList} from "react-native";
+import LoginScreen from "./LoginScreen";
 
-function App() {
-  return (
-    <View styles={styles.conntainer}>
-      <Image source={require("./assets/profile.jpg")} style={styles.image} />
-      <View style={styles.detailContainer}>
-        <Text style={{ fontWeight: 300, color: "#9d9d9e" }}>School</Text>
-        <TextInput>Progressive international</TextInput>
-      </View>
-      <View style={styles.detailContainer}>
-        <Text style={{ fontWeight: 300, color: "#9d9d9e" }}>Email Address</Text>
-        <Text style={{}}>joshuadoe168@gmail.com</Text>
-      </View>
-      <View style={styles.detailContainer}>
-        <Text style={{ fontWeight: 300, color: "#1968e6" }}>Name</Text>
-        <Text style={{ borderBottomWidth: 1 }}>JOSHUA DOE</Text>
-      </View>
-      <View style={styles.detailContainer}>
-        <Text style={{ fontWeight: 300, color: "#1968e6" }}>Nick Name</Text>
-        <Text style={{ borderBottomWidth: 1 }}>Josh_Motions</Text>
-      </View>
-      <View style={styles.detailContainer}>
-        <Text style={{ fontWeight: 300, color: "#1968e6" }}>
-          Emergency contact
-        </Text>
-        <Text style={{ borderBottomWidth: 1,  }}>+233 242403450</Text>
-      </View>
+class App extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      email:"",
+      password:"",
+      names:['ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd','ama','kofi','joshua','ddd','jdjdj','djdjdj','jdjdjjd',]
+    }
+  }
+  render(){
+    return (
+      <View styles={styles.container}>
+      <LoginScreen />
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Update profile</Text>
-      </TouchableOpacity>
-    </View>
-  );
+        {/* <TextInput style={styles.input}  
+        placeholder="email"
+        autoCapitalize="none"
+        autoCorrect={false}
+        value={this.state.email}
+        onChangeText={(email)=>{
+          this.setState({email})
+        }}
+        /> 
+
+        <TextInput style={styles.input}  
+        placeholder="password"
+        autoCapitalize="none"
+        autoCorrect={false}
+        secureTextEntry={true}
+        value={this.state.password}
+        onChangeText={(password)=>{
+          this.setState({password})
+        }}
+        
+        />
+      <TouchableOpacity  style={styles.buttonContainer}>
+        <Text style={styles.button}>LOGIN</Text>
+      </TouchableOpacity> */}
+        </View>
+         
+    );
+  }
+ 
 }
 
+  
+
 const styles = StyleSheet.create({
-  conntainer: {
-    flex: 1,
+  container: {
+    marginTop:100
   },
-
-  image:{
-    width:150,
-     height:150,
-       marginBottom:10,
-      margin:40,
-      borderRadius: 70,
-      alignSelf: "center"
-     },
-
-  detailContainer: {
-    flexDirection: "column",
-    marginVertical: 7,
-    marginLeft: 20,
-    paddingHorizontal: 6,
-    
-  },
- 
-  button: {
-    backgroundColor: "#1968e6",
-    paddingVertical: 6,
-    paddingHorizontal: 20,
-    borderRadius: 10,
-    marginVertical: 10,
-    
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    textAlign: "center",
-  },
-  // button: {
-  //   margin: 0,
-  //   justifyContent: "center",
-  //   backgroundColor: "blue",
-  //   borderColor: "blue",
-  //   color: "green",
-  //   border: 5,
-  // },
+input:{
+  backgroundColor: "yellow",
+  height: 60,
+  marginLeft:10,
+  marginBottom: 15
+},
+button:{
+color: "white",
+fontSize: 12
+},
+buttonContainer:{
+marginHorizontal: 20,
+backgroundColor:"blue",
+height: 30,
+justifyContent:"center",
+alignItems:"center",
+borderRadius:5
+}
 });
 
-export default App;
+export default  App
