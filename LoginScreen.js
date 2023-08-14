@@ -10,7 +10,8 @@ export default class LoginScreen extends Component {
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
  
           <View style={styles.loginTextContainer}>
-             <Text style={styles.loginText}>Log in</Text>
+             {/* <Text style={styles.loginText}>Log in</Text> */}
+             <Text style={styles.loginText}>Sign up</Text>
           </View>
 
           <View>
@@ -18,19 +19,31 @@ export default class LoginScreen extends Component {
              placeholderTextColor='#7c7c7d'
              placeholder='Username' />
              <TextInput style={styles.input} 
+             placeholderTextColor='#7c7c7d'
+             placeholder='Email' />
+             <TextInput style={styles.input} 
               placeholderTextColor='#7c7c7d'
               secureTextEntry={true}
              placeholder='Password' />
-             <Text style={styles.forgotpass}>Forgot Password?</Text>
+             <TextInput style={styles.input} 
+              placeholderTextColor='#7c7c7d'
+              secureTextEntry={true}
+             placeholder='Password again' />
+             {/* <Text style={styles.forgotpass}>Forgot Password?</Text> */}
           </View>
           <View>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text style={styles.buttonText}>Log in</Text>
+                {/* <Text style={styles.buttonText}>Log in Sign up</Text> */}
+                <Text style={styles.buttonText}> Sign up</Text>
               </TouchableOpacity>
           </View>
           <View style={styles.noAccount}>
-              <Text style={styles.noAccountText} >Don't have an account</Text>
-              <Text style={styles.signupText}>Sign up</Text>
+              {/* <Text style={styles.noAccountText} >Don't have an account</Text>
+              <Text style={styles.signupText}>Sign up</Text> */}
+
+               {/* FOR ASSIGNMENT  */}
+              <Text style={styles.noAccountText} >You already have an account</Text>
+              <Text style={styles.signupText}>Log in</Text>
           </View>
       </ScrollView>
     )
@@ -38,7 +51,7 @@ export default class LoginScreen extends Component {
 }
 
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
 
 container:{
     marginHorizontal: 50,
